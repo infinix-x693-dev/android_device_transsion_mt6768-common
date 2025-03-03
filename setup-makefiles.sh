@@ -8,6 +8,9 @@
 
 set -e
 
+# Elf Check
+export TARGET_ENABLE_CHECKELF=false
+
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
@@ -25,7 +28,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE_COMMON}" "${VENDOR_COMMON:-$VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "LG7n LG8n hyperreal luminance"
+write_headers "rocko x693"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
